@@ -1,4 +1,4 @@
-equirements
+requirements:- 
 
 Python 3.10+
 

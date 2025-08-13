@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sulu_OS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="boot-logo">
+            <img src="{{ url_for('static', filename='images/capybaraOS.jpg') }}" alt="Windows XP">
+            <p>Starting up...capybaraOS</p>
+            <p>complimenting people how nice their personality is</p>
+            <p>loading cringe...</p>
+            <p>developed by a level 10 tryharddddddd</p>
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <div class="desktop">
+        <!-- Capybara Icon -->
+        <div class="desktop-icon" id="capybara-icon">
+            <img src="{{ url_for('static', filename='cmd.png') }}" alt="Capybara">
+            <span>Capybara.exe</span>
+        </div>
+
+        <!-- Developer Note Icon -->
+        <div class="desktop-icon" id="developer-note-icon">
+            <img src="{{ url_for('static', filename='icons/notepad.png') }}" alt="Developer Note">
+            <span>note_from_the_developer.txt</span>
+        </div>
+
+        <!-- Capybara Window -->
+        <div id="capybara-window" class="window" style="display: none;">
+            <div class="title-bar">
+                <span>Capybara</span>
+                <div class="title-bar-buttons">
+                    <button class="minimize">_</button>
+                    <button class="maximize">□</button>
+                    <button class="close">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="capy-message">
+                    <div class="capy-animation">🦫</div>
+                    <h2 class="protocol-text">dear chaashni</h2>
+                    <div class="message-box">
+                        <p>sulu,</p>
+                        <p>i kid you not mein so hi nahi paa rha hu (coffee aur apke text ne toh gaand hi faad di).. 
+                            mujhe seriously nahi pta  how you handle my autistic ahh. 
+                            but i love you so fuckkiinnggg muchhhhh its 03:18 rn and im making this apology for you because you deserve all the icing on the cake in this world.
+                            i am so sorry for being an asshole sometimes
+                            (PS..btw its a work in progress so abhi start button kaam nahi karega)</p>
+                        <p>🦫</p>
+                    </div>
+                    <button id="forgive-btn" class="xp-button">maafi-qubool?</button>
+                    <div id="charm-message" style="display: none;">
+                        <p>leeessgooooooo maaf kardiyaaa!!!</p>
+                        <p>loser..haha</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer Note Window -->
+        <div id="developer-note-window" class="window" style="display: none;">
+            <div class="title-bar">
+                <span>note_from_the_developer.txt</span>
+                <div class="title-bar-buttons">
+                    <button class="close">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>
+                    this program was coded at ungodly hours fueled by caffeine, regret,  
+                    and the overwhelming urge to not be a disappointment... not only you are making me a better bf but also a better programmer (meine apne hackathons mein itna acha code nahi kiya tha).  
+                    so i made this to apologize for my mistakes.  
+                    mainu maaf kar do fine shyt T_T....
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div class="start-button">Start</div>
+        <div class="taskbar-time" id="clock"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

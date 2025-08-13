@@ -1,0 +1,247 @@
+#boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    z-index: 2000;
+}
+
+.boot-logo img {
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+
+.boot-logo p {
+    font-family: Tahoma, sans-serif;
+    font-size: 18px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url('/static/images/typeshit2.jpg');
+    background-size: contain;
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+    overflow: hidden;
+    /* Add these properties for better 4K image handling */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Force hardware acceleration for smoother rendering */
+.desktop {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Desktop Icons */
+.desktop {
+    height: calc(100vh - 30px);
+    padding: 20px;
+}
+
+.desktop-icon {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.desktop-icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+}
+
+.desktop-icon span {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+}
+
+.desktop-icon-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+/* Windows */
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: #ECE9D8;
+    border: 3px solid #f403e4;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.title-bar {
+    background: linear-gradient(to right, #0054E3, #2C8AF5);
+    color: white;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.title-bar-buttons button {
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+    border: 1px solid #666;
+    background: #ECE9D8;
+    cursor: pointer;
+}
+
+.window-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.capy-animation {
+    font-size: 72px;
+    margin: 20px 0;
+    animation: bounce 2s infinite;
+}
+
+.protocol-text {
+    color: #b507bb;
+    font-size: 24px;
+    margin: 20px 0;
+    animation: glow 2s infinite;
+}
+
+.message-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: left;
+    line-height: 1.6;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.xp-button {
+    background: linear-gradient(to bottom, #7CB5FF, #0054E3);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.xp-button:hover {
+    transform: scale(1.05);
+}
+
+#charm-message {
+    margin-top: 20px;
+    color: #0054E3;
+    font-weight: bold;
+    animation: fadeIn 0.5s;
+}
+/*developers note: this is a comment for developers to know that this is the style for the taskbar and start button*/
+.desktop-icon-group {
+    display: flex;
+    align-items: flex-start; /* top align with other desktop icons */
+    gap: 20px; /* space between icons */
+}
+.developer-note-icon {
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.developer-note-icon img {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
+
+.developer-note-icon span {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.developer-note-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, #2255EE, #3593FF);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 1000;
+}
+
+.start-button {
+    background: linear-gradient(to bottom, #3593FF, #0054E3);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 5px rgba(0, 84, 227, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(0, 84, 227, 0.6); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
